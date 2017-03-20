@@ -15,6 +15,10 @@ public class WashType {
         return wTypePrice;
     }
 
+    public String toString() {
+        return wTypeName;
+    }
+
     
 }
 

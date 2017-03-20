@@ -1,27 +1,23 @@
 public class Customer {
     private String firstName;
     private String lastName;
-    private int cdNumber;
-    private double cdBalance;
+    private CreditCard creditCard;
+    private WashCard washCard;
 
-    public Customer(String firstName, String lastName, int cdNumber, double cdBalance) {
+    public Customer(String firstName, String lastName, CreditCard creditCard, WashCard washCard) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.cdNumber = cdNumber;
-        this.cdBalance = cdBalance;
+        this.creditCard = creditCard;
+        this.washCard = washCard;
     }
 
     public String getCustomerName() {
         return firstName + lastName;
     }
 
-    public int getCdNumber() {
-        return cdNumber;
-    }
 
-    public double getCdBalance() {
-        return cdBalance;
-    }
+    
+    
 
 
 
