@@ -36,7 +36,14 @@ public class WashCard {
     public void buyWashType(int wCardBalance, String wTypeName, int wTypePrice){
         if (wCardBalance - wTypePrice >= 0){
             wCardBalance = wCardBalance - wTypePrice;
-            System.out.println("You bought " + wTypeName + ". Your card balance is " + wCardBalance);
+            System.out.println("You bought " + wTypeName + ". Your card balance is " + wCardBalance + "\nThank you for your purchase.");
+            int receiptYesNo = Integer.parseInt(console.readLine("Would you like a receipt?\nPress 1 for 'Yes' or press 2 for 'No'\n"));
+            if (receiptYesNo == 1) {
+                System.out.println("------------Receipt------------\n" + "\nYour wash: " + wTypeName + "\nPrice: " + wTypePrice + " kr.\nRemaining Card Balance: " + wCardBalance + " kr.\n\nThank you, please come again\n\n-------------------------------");
+            }
+            else if (receiptYesNo == 2) {
+                System.out.println("Thank you, please come again");
+            }
         }
         else{
             System.out.println("You need more money");
@@ -48,13 +55,16 @@ public class WashCard {
     }
 
     public void addFunds(){
-        int inputAmount = Integer.parseInt(console.readLine("Hom much money would you like to add to your card./You can add from 200-1000 kr."));
-        if(inputAmount >= 200 && inputAmount <= 1000 && inputAmount + wCardBalance > 1000){
+        int inputAmount = Integer.parseInt(console.readLine("Hom much money would you like to add to your card.\nYou can add from 200-1000 kr.\n"));
+        if(inputAmount >= 200 && inputAmount <= 1000 && inputAmount + wCardBalance <= 1000){
             wCardBalance = wCardBalance + inputAmount;
-            System.out.println(wCardBalance);
+            System.out.println("Your new balance is " + wCardBalance + "kr.\n");
         }
-        else{
-            System.out.println("Max value of total amount is 1000");
+        else if(inputAmount < 200 || inputAmount > 1000) {
+            System.out.println("Please insert between 200 and 1000 kr\n");
+        }
+        else {
+            System.out.println("You cannot have more than 1000 kr on your card\n");
         }
     }
 
@@ -68,8 +78,13 @@ public class WashCard {
         CreditCard creditCard = new CreditCard("1241589", inputPin, 10100);
 
         int inputAmount = Integer.parseInt(console.readLine("How much money do you want to add to your new wash card?\n"));
+
+        while (inputAmount < 200 || inputAmount > 1000) {
+                 inputAmount = Integer.parseInt(console.readLine("You cannot have less than 200 kr and more than 1000 kr on your card. Please try again.\n"));
+        }
         
-        cardID++;
+        if(inputAmount >= 200 && inputAmount <= 1000) {
+            cardID++;
         WashCard wCard = new WashCard(cardID, inputAmount);
 
         Customer customer = new Customer(inputFirstName, inputLastName, creditCard, wCard);
@@ -77,6 +92,10 @@ public class WashCard {
         Owner.addCustomer(customer);
 
         System.out.println("Your new card ID is: " + cardID + "\nYour card balance is: " + inputAmount + " kr.\n");
+        }
+        
+        
+        
 
         /* if (creditCardBalance - inputAmount >= 0) {
             creditCardBalance = creditCardBalance - inputAmount;
