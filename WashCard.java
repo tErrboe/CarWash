@@ -55,7 +55,7 @@ public class WashCard {
         String inputPin = console.readLine("Insert your credit card and enter your PIN\n");
 
         CreditCard creditCard = new CreditCard("1241589", inputPin, 10100);
-//Should have a 1000 kr. limit and wolud be nice if it was a int type 
+
         int inputAmount = Integer.parseInt(console.readLine("How much money do you want to add to your new wash card?\n"));
         
         cardID++;
@@ -75,11 +75,4 @@ public class WashCard {
         } */
         
     } 
-
-
-
-
-
-
-
 }

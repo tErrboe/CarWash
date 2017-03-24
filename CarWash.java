@@ -22,24 +22,28 @@ public class CarWash {
 //Option 1 = inserting wash card to buy wash, check balance or insert money
             if(optionsInput.equals("1")){
                 WashCard wc1 = new WashCard(999, 1000);
+                System.out.println(wc1);
                 System.out.println("");
-                String orderInput = console.readLine("Which wash type do you want?\n1: " + washtypes[0] + "\n2: " + washtypes[1] + "\n3: " + washtypes[2] + "\n4: " + washtypes[3] + "\n");
-                if(orderInput.equals("1")){
-                    wc1.buyWashType(wc1.getWCardBalance(), washtypes[0].getWTypeName(), washtypes[0].getWTypePrice());
+                String optionsInput1 = console.readLine("Your options are: \n1: Buy wash \n2: Insert money on card\n");
+                if(optionsInput1.equals("1")){
+                    String orderInput = console.readLine("Which wash type do you want?\n1: " + washtypes[0] + "\n2: " + washtypes[1] + "\n3: " + washtypes[2] + "\n4: " + washtypes[3] + "\n");
+                    if(orderInput.equals("1")){
+                        wc1.buyWashType(wc1.getWCardBalance(), washtypes[0].getWTypeName(), washtypes[0].getWTypePrice());
+                    }
+
+                    else if(orderInput.equals("2")){
+                        wc1.buyWashType(wc1.getWCardBalance(), washtypes[1].getWTypeName(), washtypes[1].getWTypePrice());
+                    }
+
+                    else if(orderInput.equals("3")){
+                        wc1.buyWashType(wc1.getWCardBalance(), washtypes[2].getWTypeName(), washtypes[2].getWTypePrice());
+                    }
+
+                    else if(orderInput.equals("4")){
+                        wc1.buyWashType(wc1.getWCardBalance(), washtypes[3].getWTypeName(), washtypes[3].getWTypePrice());
+                    }
                 }
 
-                else if(orderInput.equals("2")){
-                    wc1.buyWashType(wc1.getWCardBalance(), washtypes[1].getWTypeName(), washtypes[1].getWTypePrice());
-                }
-
-                else if(orderInput.equals("3")){
-                    wc1.buyWashType(wc1.getWCardBalance(), washtypes[2].getWTypeName(), washtypes[2].getWTypePrice());
-                }
-
-                else if(orderInput.equals("4")){
-                    wc1.buyWashType(wc1.getWCardBalance(), washtypes[3].getWTypeName(), washtypes[3].getWTypePrice());
-                }
-                
                 System.out.println("");
             }
 //Option 2 = buy wash card
