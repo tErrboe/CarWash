@@ -33,20 +33,27 @@ public class Owner {
             console.readLine("Hallo " + ownerLogin + ". Inter your password\n");
 
             if(ownerLogin.equals(password)){
-                int receiptYesNo = Integer.parseInt(console.readLine("Your options are: \n "));
+                int ownerOptions = Integer.parseInt(console.readLine("Your options are: \n1: Print customers\n2: Print statistics"));
+
+                if(ownerOptions == 1){
+                    int customerNumber = 0;
+                    for(Customer c : customers){
+                    customerNumber++;
+                    System.out.println(customerNumber + "." + c);
+                    }
+                }
+                
+                else if(ownerOptions == 2){
+
+                }
+                }
             }
-        }
-        
+
         else{
             System.out.println("Try again");
         }
     }
-
-    public void printCustomers() {
-        int customerNumber = 0;
-        for(Customer c : customers){
-            customerNumber++;
-            System.out.println(customerNumber + "." + c);
-           }
-        }
+    public void printCustomers(){
+        
+    }
 }
