@@ -33,7 +33,7 @@ public class WashCard {
         return "\nWashcardID: " + wCardID + "\nWashcard balance: " + wCardBalance;
     }
 
-    public void buyWashType(int wCardBalance, String wTypeName, int wTypePrice){
+    public void buyWashType(String wTypeName, int wTypePrice){
         if (wCardBalance - wTypePrice >= 0){
             wCardBalance = wCardBalance - wTypePrice;
             System.out.println("You bought " + wTypeName + ". Your card balance is " + wCardBalance + "\nThank you for your purchase.");

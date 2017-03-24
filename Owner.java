@@ -28,16 +28,12 @@ public class Owner {
 
     public void login(String username, String password) {
         Console console = System.console();
-        boolean success = false; 
         String ownerLogin = console.readLine("Hallo owner. Inter your username\n");
         if(ownerLogin.equals(username)){
             console.readLine("Hallo " + ownerLogin + ". Inter your password\n");
 
             if(ownerLogin.equals(password)){
-                success = true;
-            }
-            else{
-                success = false;
+                int receiptYesNo = Integer.parseInt(console.readLine("Your options are: \n "));
             }
         }
         
@@ -51,14 +47,6 @@ public class Owner {
         for(Customer c : customers){
             customerNumber++;
             System.out.println(customerNumber + "." + c);
+           }
         }
-    }
-
-
-
-
-
-
-
-
 }
