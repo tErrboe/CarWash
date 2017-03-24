@@ -1,18 +1,25 @@
 public class Customer {
-    private String firstName;
-    private String lastName;
+    private String firstname;
+    private String lastname;
     private CreditCard creditCard;
     private WashCard washCard;
 
-    public Customer(String firstName, String lastName, CreditCard creditCard, WashCard washCard) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    
+
+    public Customer(String firstname, String lastname, CreditCard creditCard, WashCard washCard) {
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.creditCard = creditCard;
         this.washCard = washCard;
     }
 
     public String getCustomerName() {
-        return firstName + lastName;
+        return firstname + lastname;
+    }
+
+    public String toString(){
+
+        return "\n" + "Firstname: " + firstname + "\nLastname: " + lastname + washCard + "\n\n";
     }
 
 

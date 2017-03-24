@@ -7,6 +7,13 @@ public class WashType {
         this.wTypePrice = wTypePrice;
     }
 
+
+    // public void printWashTypes(Washtype wTypes){
+    //     for(WashType wt : wTypes){
+    //         System.out.println(wt);
+    //     }
+    // }
+
     public String getWTypeName() {
         return wTypeName;
     }

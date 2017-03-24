@@ -1,20 +1,18 @@
 public class CreditCard {
-    private int pin;
+
+//should be int
+    private String pin;
+    private String creditCardNumber;
     private int creditCardBalance;
 
-    public CreditCard(int pin, int creditCardBalance) {
+    public CreditCard(String creditCardNumber, String pin, int creditCardBalance) {
         this.pin = pin;
         this.creditCardBalance = creditCardBalance;
 
     }
 
-
     public String toString() {
         return "Creditcard number: " + creditCardNumber + "Creditcard balance: " + creditCardBalance;
+        
     }
-
-
-
-
-
 }
