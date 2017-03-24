@@ -4,6 +4,7 @@ public class WashCard {
 //Should be int
     private int wCardBalance;
     private int cardID = 0;
+    Console console = System.console();
 
     public WashCard(int wCardID, int wCardBalance) {
         this.wCardID = wCardID;
@@ -46,13 +47,23 @@ public class WashCard {
 
     }
 
+    public void addFunds(){
+        int inputAmount = Integer.parseInt(console.readLine("Hom much money would you like to add to your card./You can add from 200-1000 kr."));
+        if(inputAmount >= 200 && inputAmount <= 1000 && inputAmount + wCardBalance > 1000){
+            wCardBalance = wCardBalance + inputAmount;
+            System.out.println(wCardBalance);
+        }
+        else{
+            System.out.println("Max value of total amount is 1000");
+        }
+    }
+
     public void buyWashCard() {
-        Console console = System.console();
         String inputFirstName = console.readLine("What is your first name?\n");
 
         String inputLastName = console.readLine("What is your last name?\n");
     
-        String inputPin = console.readLine("Insert your credit card and enter your PIN\n");
+        int inputPin = Integer.parseInt(console.readLine("Insert your credit card and enter your PIN\n"));
 
         CreditCard creditCard = new CreditCard("1241589", inputPin, 10100);
 

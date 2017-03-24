@@ -1,11 +1,11 @@
 public class CreditCard {
 
 //should be int
-    private String pin;
+    private int pin;
     private String creditCardNumber;
     private int creditCardBalance;
 
-    public CreditCard(String creditCardNumber, String pin, int creditCardBalance) {
+    public CreditCard(String creditCardNumber, int pin, int creditCardBalance) {
         this.pin = pin;
         this.creditCardBalance = creditCardBalance;
 
@@ -13,6 +13,6 @@ public class CreditCard {
 
     public String toString() {
         return "Creditcard number: " + creditCardNumber + "Creditcard balance: " + creditCardBalance;
-        
+
     }
 }

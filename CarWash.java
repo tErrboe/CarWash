@@ -45,7 +45,7 @@ public class CarWash {
                 }
 
                 else if(optionsInput1.equals("2")){
-
+                    wc1.addFunds();
                 }
 
                 System.out.println("");
