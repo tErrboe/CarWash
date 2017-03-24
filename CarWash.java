@@ -44,6 +44,10 @@ public class CarWash {
                     }
                 }
 
+                else if(optionsInput1.equals("2")){
+
+                }
+
                 System.out.println("");
             }
 //Option 2 = buy wash card
