@@ -3,10 +3,15 @@ public class WashCard {
     private int wCardID;
 //Should be int
     private String wCardBalance;
+    private int cardID = 0;
 
     public WashCard(int wCardID, String wCardBalance) {
         this.wCardID = wCardID;
         this.wCardBalance = wCardBalance;
+    }
+
+    public WashCard(){
+        
     }
 
     // public int getWCardID() {
@@ -24,7 +29,7 @@ public class WashCard {
     public void printReceipt() {
     }
 
-    public static void buyWashCard() {
+    public void buyWashCard() {
         Console console = System.console();
         String inputFirstName = console.readLine("What is your first name?\n");
 
@@ -36,7 +41,6 @@ public class WashCard {
 //Should have a 1000 kr. limit and wolud be nice if it was a int type 
         String inputAmount = console.readLine("How much money do you want to add to your new wash card?\n");
         
-        int cardID = 0;
         cardID++;
         WashCard wCard = new WashCard(cardID, inputAmount);
 

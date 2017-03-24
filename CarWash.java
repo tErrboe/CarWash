@@ -12,6 +12,8 @@ public class CarWash {
         washtypes[2] = new WashType("Gold", 500);
         washtypes[3] = new WashType("Diamond", 1000);
 
+        WashCard washCard = new WashCard();
+
         
         for(int i = 0; i < 1;){
         
@@ -24,7 +26,7 @@ public class CarWash {
             }
 //Option 2 = buy wash card
             else if(optionsInput.equals("2")){
-                WashCard.buyWashCard();
+                washCard.buyWashCard();
             }
 
             else if(optionsInput.equals("123")){
