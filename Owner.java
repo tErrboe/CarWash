@@ -53,7 +53,4 @@ public class Owner {
             System.out.println("Try again");
         }
     }
-    public void printCustomers(){
-        
-    }
 }

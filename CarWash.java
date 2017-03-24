@@ -75,9 +75,5 @@ public class CarWash {
                 System.out.println("Try again");
             }
         }
-
-        owner.printCustomers();
-
-
     }
 }
