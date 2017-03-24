@@ -2,10 +2,10 @@ import java.io.Console;
 public class WashCard {
     private int wCardID;
 //Should be int
-    private String wCardBalance;
+    private int wCardBalance;
     private int cardID = 0;
 
-    public WashCard(int wCardID, String wCardBalance) {
+    public WashCard(int wCardID, int wCardBalance) {
         this.wCardID = wCardID;
         this.wCardBalance = wCardBalance;
     }
@@ -13,6 +13,12 @@ public class WashCard {
     public WashCard(){
         
     }
+
+    public int getWCardBalance(){
+        return wCardBalance;
+    }
+
+
 
     // public int getWCardID() {
     //     return wCardID;
@@ -26,7 +32,18 @@ public class WashCard {
         return "\nWashcardID: " + wCardID + "\nWashcard balance: " + wCardBalance;
     }
 
+    public void buyWashType(int wCardBalance, String wTypeName, int wTypePrice){
+        if (wCardBalance - wTypePrice >= 0){
+            wCardBalance = wCardBalance - wTypePrice;
+            System.out.println("You bought " + wTypeName + ". Your card balance is " + wCardBalance);
+        }
+        else{
+            System.out.println("You need more money");
+        }
+    }
+
     public void printReceipt() {
+
     }
 
     public void buyWashCard() {
@@ -39,7 +56,7 @@ public class WashCard {
 
         CreditCard creditCard = new CreditCard("1241589", inputPin, 10100);
 //Should have a 1000 kr. limit and wolud be nice if it was a int type 
-        String inputAmount = console.readLine("How much money do you want to add to your new wash card?\n");
+        int inputAmount = Integer.parseInt(console.readLine("How much money do you want to add to your new wash card?\n"));
         
         cardID++;
         WashCard wCard = new WashCard(cardID, inputAmount);
