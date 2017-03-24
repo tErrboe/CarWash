@@ -18,16 +18,16 @@ public class CarWash {
         
         for(int i = 0; i < 1;){
         
-            String optionsInput = console.readLine("Hello and welcome to the car wash. How would you like to proceed?\nThese are your options:\n1: Insert Wash Card\n2: Buy Wash Card\n");
+            String optionsInput = console.readLine("-----------------------------------------------------------------\n\nHello and welcome to the car wash. How would you like to proceed?\nThese are your options:\n1: Insert Wash Card\n2: Buy Wash Card\n\n-----------------------------------------------------------------\n");
 
 //Option 1 = inserting wash card to buy wash, check balance or insert money
             if(optionsInput.equals("1")){
                 for (int j = 0; j < 1;) {
-                System.out.println(wc1);
+                System.out.println("-----------------------\n" + wc1);
                 System.out.println("");
-                String optionsInput1 = console.readLine("Your options are: \n1: Buy wash \n2: Insert money on card\n");
+                String optionsInput1 = console.readLine("Your options are: \n1: Buy wash \n2: Insert money on card\n\n------------------------\n");
                 if(optionsInput1.equals("1")){
-                    String orderInput = console.readLine("Which wash type do you want?\n1: " + washtypes[0] + "\n2: " + washtypes[1] + "\n3: " + washtypes[2] + "\n4: " + washtypes[3] + "\n");
+                    String orderInput = console.readLine("----------------------------\n\nWhich wash type do you want?\n1: " + washtypes[0] + "\n2: " + washtypes[1] + "\n3: " + washtypes[2] + "\n4: " + washtypes[3] + "\n\n----------------------------\n");
                     if(orderInput.equals("1")){
                         wc1.buyWashType(washtypes[0].getWTypeName(), washtypes[0].getWTypePrice());
                         j++;
