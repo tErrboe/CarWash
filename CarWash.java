@@ -64,13 +64,12 @@ public class CarWash {
 
             else if(optionsInput.equals("123")){
                 // boolean success = false;
-                owner.login(owner.getUsername(), owner.getPassword());
+                owner.login();
             }
 
             else if(optionsInput.equals("000")){
                 i++;
             }
-//Error message should be changed and after error should it return to start
             else {
                 System.out.println("Try again");
             }

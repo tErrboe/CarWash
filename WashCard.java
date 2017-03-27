@@ -1,10 +1,15 @@
 import java.io.Console;
+import java.util.ArrayList;
+
 public class WashCard {
     private int wCardID;
-//Should be int
     private int wCardBalance;
     private int cardID = 0;
+    private int washCounter = 0;
+    private int turnover = 0;
     Console console = System.console();
+// ArrayList for turnover (omsætning)
+    // private ArrayList<Turnover> turnover = new ArrayList<Turnover>();
 
     public WashCard(int wCardID, int wCardBalance) {
         this.wCardID = wCardID;
@@ -19,15 +24,9 @@ public class WashCard {
         return wCardBalance;
     }
 
-
-
-    // public int getWCardID() {
-    //     return wCardID;
-    // }
-
-    // public String getWCardBalance() {
-    //     return wCardBalance;
-    // }
+    public void printTurnover(){
+        System.out.println("Number of washes: " + washCounter + "\nTurnover: " + turnover);
+    }
 
     public String toString(){
         return "\nWashcardID: " + wCardID + "\nWashcard balance: " + wCardBalance;
@@ -38,6 +37,8 @@ public class WashCard {
             wCardBalance = wCardBalance - wTypePrice;
             System.out.println("You bought " + wTypeName + ". Your card balance is " + wCardBalance + "\nThank you for your purchase.");
             int receiptYesNo = Integer.parseInt(console.readLine("Would you like a receipt?\nPress 1 for 'Yes' or press 2 for 'No'\n"));
+            washCounter++;
+            turnover = wTypePrice + turnover;
             if (receiptYesNo == 1) {
                 System.out.println("------------Receipt------------\n" + "\nYour wash: " + wTypeName + "\nPrice: " + wTypePrice + " kr.\nRemaining Card Balance: " + wCardBalance + " kr.\n\nThank you, please come again\n\n-------------------------------");
             }
@@ -93,16 +94,5 @@ public class WashCard {
 
         System.out.println("Your new card ID is: " + cardID + "\nYour card balance is: " + inputAmount + " kr.\n");
         }
-        
-        
-        
-
-        /* if (creditCardBalance - inputAmount >= 0) {
-            creditCardBalance = creditCardBalance - inputAmount;
-        }
-        else {
-            System.out.println("Credit card declined");
-        } */
-        
     } 
 }

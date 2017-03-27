@@ -3,8 +3,10 @@ import java.io.Console;
 
 
 public class Owner {
-    private String username;
-    private String password;
+    private String username = "admin";
+    private String password = "1234";
+
+    WashCard wc = new WashCard();
 
     private static ArrayList<Customer> customers = new ArrayList<Customer>();
 
@@ -26,31 +28,41 @@ public class Owner {
         return password;
     }
 
-    public void login(String username, String password) {
+    public void login() {
         Console console = System.console();
-        String ownerLogin = console.readLine("Hallo owner. Inter your username\n");
+        boolean loggedIn = true;
+        String ownerLogin = console.readLine("Hallo owner. Enter your username\n");
+        
+        while (loggedIn == true) { 
         if(ownerLogin.equals(username)){
-            console.readLine("Hallo " + ownerLogin + ". Inter your password\n");
+            ownerLogin = console.readLine("Hallo " + ownerLogin + ". Enter your password\n");
 
             if(ownerLogin.equals(password)){
-                int ownerOptions = Integer.parseInt(console.readLine("Your options are: \n1: Print customers\n2: Print statistics"));
+                int ownerOptions = Integer.parseInt(console.readLine("Your options are: \n1: Print customers\n2: Print turnover\n"));
 
                 if(ownerOptions == 1){
                     int customerNumber = 0;
                     for(Customer c : customers){
                     customerNumber++;
                     System.out.println(customerNumber + "." + c);
+                
                     }
                 }
                 
                 else if(ownerOptions == 2){
-
+                    wc.printTurnover();
                 }
+                String logout = console.readLine("Here are the statistics for the day. Press '1' to log out.");
+                 if (logout.equalsIgnoreCase("1")) {
+                        loggedIn = false;
                 }
             }
+        }
+        
 
         else{
             System.out.println("Try again");
+        }
         }
     }
 }

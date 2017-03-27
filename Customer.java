@@ -18,7 +18,6 @@ public class Customer {
     }
 
     public String toString(){
-
         return "\n" + "Firstname: " + firstname + "\nLastname: " + lastname + washCard + "\n\n";
     }
 
