@@ -20,10 +20,6 @@ public class WashCard {
         
     }
 
-    public int getWCardBalance(){
-        return wCardBalance;
-    }
-
     public void printTurnover(){
         System.out.println("Number of washes: " + washCounter + "\nTurnover: " + turnover);
     }
@@ -51,10 +47,6 @@ public class WashCard {
         }
     }
 
-    public void printReceipt() {
-
-    }
-
     public void addFunds(){
         int inputAmount = Integer.parseInt(console.readLine("Hom much money would you like to add to your card.\nYou can add from 200-1000 kr.\n"));
         if(inputAmount >= 200 && inputAmount <= 1000 && inputAmount + wCardBalance <= 1000){
@@ -76,7 +68,7 @@ public class WashCard {
     
         int inputPin = Integer.parseInt(console.readLine("Insert your credit card and enter your PIN\n"));
 
-        CreditCard creditCard = new CreditCard("1241589", inputPin, 10100);
+        CreditCard creditCard = new CreditCard(1241589, inputPin, 10100);
 
         int inputAmount = Integer.parseInt(console.readLine("How much money do you want to add to your new wash card?\n"));
 

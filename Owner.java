@@ -20,14 +20,6 @@ public class Owner {
         customers.add(c);
     }
 
-    public String getUsername(){
-        return username;
-    }
-
-    public String getPassword(){
-        return password;
-    }
-
     public void login() {
         Console console = System.console();
         boolean loggedIn = true;

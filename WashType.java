@@ -18,8 +18,6 @@ public class WashType {
     public String toString() {
         return wTypeName + " " + wTypePrice + " kr.";
     }
-
-    
 }
 
 

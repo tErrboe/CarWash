@@ -13,10 +13,6 @@ public class Customer {
         this.washCard = washCard;
     }
 
-    public String getCustomerName() {
-        return firstname + lastname;
-    }
-
     public String toString(){
         return "\n" + "Firstname: " + firstname + "\nLastname: " + lastname + washCard + "\n\n";
     }
