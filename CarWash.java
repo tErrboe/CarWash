@@ -18,60 +18,62 @@ public class CarWash {
         
         for(int i = 0; i < 1;){
         
-            String optionsInput = console.readLine("-----------------------------------------------------------------\n\nHello and welcome to the car wash. How would you like to proceed?\nThese are your options:\n1: Insert Wash Card\n2: Buy Wash Card\n\n-----------------------------------------------------------------\n");
-
+            int optionsInput = Integer.parseInt(console.readLine("-----------------------------------------------------------------\n\nHello and welcome to the car wash. How would you like to proceed?\nThese are your options:\n1: Insert Wash Card\n2: Buy Wash Card\n\n-----------------------------------------------------------------\n"));
+            switch(optionsInput){
 //Option 1 = inserting wash card to buy wash, check balance or insert money
-            if(optionsInput.equals("1")){
+            case 1:
                 for (int j = 0; j < 1;) {
                 System.out.println("-----------------------\n" + wc1);
                 System.out.println("");
-                String optionsInput1 = console.readLine("Your options are: \n1: Buy wash \n2: Insert money on card\n\n------------------------\n");
-                if(optionsInput1.equals("1")){
-                    String orderInput = console.readLine("----------------------------\n\nWhich wash type do you want?\n1: " + washtypes[0] + "\n2: " + washtypes[1] + "\n3: " + washtypes[2] + "\n4: " + washtypes[3] + "\n\n----------------------------\n");
-                    if(orderInput.equals("1")){
+                int optionsInput1 = Integer.parseInt(console.readLine("Your options are: \n1: Buy wash \n2: Insert money on card\n\n------------------------\n"));
+                switch(optionsInput1){
+                case 1:
+                    int orderInput = Integer.parseInt(console.readLine("----------------------------\n\nWhich wash type do you want?\n1: " + washtypes[0] + "\n2: " + washtypes[1] + "\n3: " + washtypes[2] + "\n4: " + washtypes[3] + "\n\n----------------------------\n"));
+                    switch(orderInput){
+
+                    case 1:
                         wc1.buyWashType(washtypes[0].getWTypeName(), washtypes[0].getWTypePrice());
                         j++;
-                    }
-
-                    else if(orderInput.equals("2")){
+                        break;
+            
+                    case 2:
                         wc1.buyWashType(washtypes[1].getWTypeName(), washtypes[1].getWTypePrice());
                         j++;
-                    }
-
-                    else if(orderInput.equals("3")){
+                        break;
+                    case 3:
                         wc1.buyWashType(washtypes[2].getWTypeName(), washtypes[2].getWTypePrice());
                         j++;
-                    }
-
-                    else if(orderInput.equals("4")){
+                        break;
+                    case 4:
                         wc1.buyWashType(washtypes[3].getWTypeName(), washtypes[3].getWTypePrice());
                         j++;
+                        break;
                     }
-                
-                }
-
-                else if(optionsInput1.equals("2")){
+                    break;
+                case 2:
                     wc1.addFunds();
+                    break;
                 }
-                }
-
+                
                 System.out.println("");
             }
+            break;
 //Option 2 = buy wash card
-            else if(optionsInput.equals("2")){
+            case 2:
                 washCard.buyWashCard();
-            }
+                break;
 
-            else if(optionsInput.equals("123")){
-                // boolean success = false;
+            case 3:
                 owner.login();
-            }
+                break;
 
-            else if(optionsInput.equals("000")){
+            case 000:
                 i++;
-            }
-            else {
+                break;
+
+            default:
                 System.out.println("Try again");
+                break;
             }
         }
     }

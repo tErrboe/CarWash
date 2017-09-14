@@ -9,7 +9,6 @@ public class CreditCard {
         this.pin = pin;
         this.creditCardBalance = creditCardBalance;
         this.creditCardNumber = creditCardNumber;
-
     }
 
     public String toString() {
